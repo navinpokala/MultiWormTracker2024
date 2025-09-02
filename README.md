@@ -1,7 +1,8 @@
 # MultiWormTracker2024
+
 MATLAB-based worm tracking software, optimized for MATLAB 2024b
 
-Make sure that you have the Matlab image processing toolbox installed. 
+Make sure that you have the Matlab image processing and statistics toolboxes installed. 
 
 Launch matlab.
 
@@ -10,15 +11,17 @@ cd to where-ever you put the code. I STRONGLY recommend against using spaces in 
 Edit MultiWormTracker_setup.m:
       edit line 8 MultiWormTracker_CODE_PATH to where you put the source code directory
 
-Using Windows, copy put_into_C_windows_system32\pdftk.exe to C:\Windows\System32
+Using Windows, copy the contents of put_into_C_windows_system32\pdftk.exe to C:\Windows\System32
 
 Run MultiWormTracker_setup in matlab each time you want to use the code: 
 
 >> MultiWormTracker_setup 
 
+You will need to temporarily remove any other non-core matlab paths using the Set Path menu in the toolbar (set to Default, then Close)
+This is necessary to avoid conflicts between function names, etc. 
 This will temporarily set the program path to the MultiWormTracker_CODE_PATH 
-directory and temporarily remove any other non-core matlab paths. This is necessary to avoid conflicts between function names, etc. 
 These changes are NOT saved; you will need to run MultiWormTracker_setup each time unless you manually save the path. However, you will not need to edit MultiWormTracker_setup.m again. 
+
 
 To track, cd to the directory containing your movies, or the directory just above.
 
@@ -95,44 +98,8 @@ For lawn leaving:
 		>> leaving_events_per_min_on_lawn  = lawn_leaving_analysis('mymovie.avi',1,'timerbox')
 	If the program has a hard time finding the lawn edge or worms, the GUI will ask for your help.
 
-There are lots of other functions and programs hidden in the package .... I need to document them all someday!
 
-If you have any questions or problems at all, please let me know. This version has been tested on R2011b, 
-but should work on later versions. Some earlier versions may give interesting errors that can
-be easily fixed by changing the names of some functions. 
-I have found that anytime someone else uses my software, it fails in a novel manner!! 
-npokala@alum.mit.edu
 
-For additional details and remarks, please see 
-Pokala and Flavell "Recording and quantifying C. elegans behavior" in the
-"C. elegans Methods and Applications" volume of "Methods in Molecular Biology"
-
-If you have any questions or problems, please let me know ...
-I have found that anytime someone else uses my software, it fails in a novel manner!! 
-This version has been tested on R2024b but should work on later versions. 
-There are many additional functions for analyzing and displaying Tracks and binned data I haven't had a chance to properly document ... 
-Feel free to drop me an email to see whether a function to do what you want already exists or is a few edits away from existing ...
-Navin Pokala
-navin (dot) pokala (at) nyit (dot) edu
-
-Make sure that you have the Matlab image processing and statistics toolboxes installed. 
-
-Launch matlab. 
-
-cd to where-ever you put the code. I STRONGLY recommend against using spaces in directories or filenames. 
-
-Edit MultiWormTracker_setup.m:
-      edit line 8 MultiWormTracker_CODE_PATH to where you put the source code directory
-
-Using Windows, copy put_into_C_windows_system32\pdftk.exe to C:\Windows\System32
-
-Run MultiWormTracker_setup in matlab each time you want to use the code: 
-
->> MultiWormTracker_setup 
-
-This will temporarily set the program path to the MultiWormTracker_CODE_PATH 
-directory and temporarily remove any other non-core matlab paths. This is necessary to avoid conflicts between function names, etc. 
-These changes are NOT saved; you will need to run MultiWormTracker_setup each time unless you manually save the path. However, you will not need to edit MultiWormTracker_setup.m again. 
 
 To track, cd to the directory containing your movies, or the directory just above.
 
@@ -300,5 +267,18 @@ For lawn leaving:
 
 WormPlayer('mymovie.linkedTracks.mat') will launch a viewer for playing individual worm tracks overlaid on the movie
 
+There are lots of other functions and programs hidden in the package .... I need to document them all someday!
+
+For additional details and remarks, please see 
+Pokala and Flavell "Recording and quantifying C. elegans behavior" in the
+"C. elegans Methods and Applications" volume of "Methods in Molecular Biology"
+
+If you have any questions or problems, please let me know ...
+I have found that anytime someone else uses my software, it fails in a novel manner!! 
+This version has been tested on R2024b but should work on later versions. 
+There are many additional functions for analyzing and displaying Tracks and binned data I haven't had a chance to properly document ... 
+Feel free to drop me an email to see whether a function to do what you want already exists or is a few edits away from existing ...
+Navin Pokala
+navin (dot) pokala (at) nyit (dot) edu
 
 
